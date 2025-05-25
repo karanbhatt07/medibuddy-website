@@ -135,19 +135,6 @@
       border-top: 1px solid #d8e2ea;
       user-select: none;
     }
-
-    /* New styles for message display */
-    #formMessage {
-      margin-top: 1rem;
-      font-weight: 600;
-      text-align: center;
-    }
-    #formMessage.success {
-      color: green;
-    }
-    #formMessage.error {
-      color: red;
-    }
   </style>
 </head>
 <body>
@@ -162,7 +149,7 @@
 
   <main>
     <h2>Contact a Doctor</h2>
-    <form id="contactForm">
+    <form>
       <div>
         <label for="name">Full Name</label>
         <input id="name" type="text" name="name" placeholder="Your full name" required />
@@ -185,49 +172,11 @@
 
       <button type="submit">Submit</button>
     </form>
-    <div id="formMessage"></div>
   </main>
 
   <footer>
     &copy; 2025 Medi Buddy. All rights reserved.
   </footer>
-
-  <!-- Add jQuery from CDN -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-  <script>
-    $(document).ready(function () {
-      $('#contactForm').submit(function (e) {
-        e.preventDefault();
-
-        $('#formMessage').removeClass('success error').text('');
-
-        // Collect data from form fields
-        const data = {
-          name: $('#name').val(),
-          email: $('#email').val(),
-          phone: $('#phone').val(),
-          message: $('#symptoms').val()
-        };
-
-        const apiUrl = "https://svu1m80z15.execute-api.eu-north-1.amazonaws.com/prod";
-
-        $.ajax({
-          url: apiUrl,
-          method: "POST",
-          contentType: "application/json",
-          data: JSON.stringify(data),
-          success: function (res) {
-            $('#formMessage').addClass('success').text('Thank you! Your message has been sent.');
-            $('#contactForm')[0].reset();
-          },
-          error: function (xhr, status, err) {
-            $('#formMessage').addClass('error').text('Oops! Something went wrong. Please try again later.');
-          }
-        });
-      });
-    });
-  </script>
 
 </body>
 </html>
