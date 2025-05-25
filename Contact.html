@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Medi Buddy - Contact</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f9fc;
+      color: #2e3a59;
+    }
+
+    header {
+      background-color: #2a9d8f;
+      padding: 1rem 2rem;
+      text-align: center;
+      color: white;
+      box-shadow: 0 4px 6px rgba(42,157,143,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1.25rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #e9c46a;
+    }
+    nav a.active {
+      color: #e9c46a;
+    }
+
+    main {
+      max-width: 600px;
+      background: white;
+      margin: 3rem auto 4rem;
+      padding: 3rem 2.5rem 3.5rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(42,157,143,0.1);
+    }
+
+    h2 {
+      color: #2a9d8f;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    label {
+      font-weight: 600;
+      color: #44566c;
+      margin-bottom: 0.5rem;
+      display: block;
+      font-size: 1rem;
+      user-select: none;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 2px solid #d1d9e6;
+      border-radius: 8px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #2a9d8f;
+      box-shadow: 0 0 6px #2a9d8faa;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      background-color: #e9c46a;
+      border: none;
+      padding: 1rem 0;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border-radius: 40px;
+      cursor: pointer;
+      color: #1d3557;
+      box-shadow: 0 8px 15px rgba(233, 196, 106, 0.4);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    button:hover,
+    button:focus {
+      background-color: #f4d35e;
+      box-shadow: 0 12px 24px rgba(244, 211, 94, 0.6);
+      outline: none;
+    }
+    button:active {
+      background-color: #d9b34a;
+      box-shadow: 0 6px 10px rgba(217, 179, 74, 0.4);
+      transform: translateY(2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #f0f4f8;
+      color: #777;
+      font-size: 0.9rem;
+      border-top: 1px solid #d8e2ea;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Medi Buddy</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Contact a Doctor</h2>
+    <form>
+      <div>
+        <label for="name">Full Name</label>
+        <input id="name" type="text" name="name" placeholder="Your full name" required />
+      </div>
+
+      <div>
+        <label for="email">Email Address</label>
+        <input id="email" type="email" name="email" placeholder="your.email@example.com" required />
+      </div>
+
+      <div>
+        <label for="phone">Phone Number</label>
+        <input id="phone" type="tel" name="phone" placeholder="+91 998 877 0000" />
+      </div>
+
+      <div>
+        <label for="symptoms">Briefly Describe Your Symptoms</label>
+        <textarea id="symptoms" name="symptoms" placeholder="Tell us about your health concerns..." required></textarea>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+
+  <footer>
+    &copy; 2025 Medi Buddy. All rights reserved.
+  </footer>
+
+</body>
+</html>
